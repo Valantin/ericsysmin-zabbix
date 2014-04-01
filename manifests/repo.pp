@@ -1,14 +1,13 @@
-# Class: zabbix::repo
+# == Class: zabbix::repo
+# This sets up the Official Zabbix Repository on linux systems.
 #
-# Parameters:
+# === Parameters:
 #
-# Actions:
-#   This sets up the Official Zabbix Repository on linux systems.
+# === Actions:
 #
-# Requires:
+# === Requires:
 #
-#
-# Sample Usage:
+# === Sample Usage:
 #   class { 'zabbix::repo':}
 #     or
 #   include zabbix::repo

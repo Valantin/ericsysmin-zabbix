@@ -1,8 +1,7 @@
-# Definition: zabbix::frontend
-#
+# == Class: zabbix::frontend
 # This sets up the Zabbix Frontend on systems.
 #
-# Parameters:
+# === Parameters:
 #   [*dbType*]
 #     Defaults to MYSQL.
 #
@@ -32,11 +31,7 @@
 #
 #   [*zbxServerName*]
 #
-#
-# Actions:
-#   This sets up the Zabbix Frontend web interface.
-#
-# Requires:
+# === Requires:
 #   [*dbType*] must be set
 #   [*dbServer*] must be set
 #   [*dbPort*] must be set
@@ -46,7 +41,7 @@
 #   [*zbxServer*] must be set
 #   [*zbxServerPort*] must be set
 #
-# Sample Usage:
+# === Sample Usage:
 #
 # class { 'zabbix::frontend':
 #  dbType        => '',
@@ -60,7 +55,7 @@
 #  zbxServerPort => '',
 #  zbxServerName => ''
 #}
-
+#
 class zabbix::frontend (
   $dbType        = $zabbix::frontend::params::dbType,
   $dbServer      = $zabbix::frontend::params::dbServer,
@@ -71,8 +66,7 @@ class zabbix::frontend (
   $dbSchema      = $zabbix::frontend::params::dbSchema,
   $zbxServer     = $zabbix::frontend::params::zbxServer,
   $zbxServerPort = $zabbix::frontend::params::zbxServerPort,
-  $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits 
-zabbix::frontend::params {
+  $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits zabbix::frontend::params {
   include zabbix::frontend::install
   include zabbix::frontend::config
 

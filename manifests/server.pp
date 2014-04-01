@@ -1,8 +1,7 @@
-# Definition: zabbix::server
+# == Class: zabbix::server
+# This sets up the Zabbix Server on systems.
 #
-# This sets up the Zabbix Agent on systems.
-#
-# Parameters:
+# === Parameters:
 #   [*dbType*]
 #
 #   [*nodeID*]
