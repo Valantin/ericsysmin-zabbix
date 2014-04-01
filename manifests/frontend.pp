@@ -22,7 +22,7 @@
 #     Needs to be set.
 #
 #   [*dbSchema*]
-#
+#     SCHEMA is relevant only for IBM_DB2 database
 #
 #   [*zbxServer*]
 #     Defaults to 'localhost'.
@@ -48,6 +48,19 @@
 #
 # Sample Usage:
 #
+# class { 'zabbix::frontend':
+#  dbType        => '',
+#  dbServer      => '',
+#  dbPort        => '',
+#  dbDatabase    => '',
+#  dbUser        => '',
+#  dbPassword    => '',
+#  dbSchema      => '',
+#  zbxServer     => '',
+#  zbxServerPort => '',
+#  zbxServerName => ''
+#}
+
 class zabbix::frontend (
   $dbType        = $zabbix::frontend::params::dbType,
   $dbServer      = $zabbix::frontend::params::dbServer,
@@ -58,7 +71,8 @@ class zabbix::frontend (
   $dbSchema      = $zabbix::frontend::params::dbSchema,
   $zbxServer     = $zabbix::frontend::params::zbxServer,
   $zbxServerPort = $zabbix::frontend::params::zbxServerPort,
-  $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits zabbix::frontend::params {
+  $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits 
+zabbix::frontend::params {
   include zabbix::frontend::install
   include zabbix::frontend::config
 
