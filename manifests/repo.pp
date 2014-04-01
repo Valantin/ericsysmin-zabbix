@@ -2,19 +2,14 @@
 # This sets up the Official Zabbix Repository on linux systems.
 #
 # === Parameters:
-#
-# === Actions:
-#
-# === Requires:
+# [*apt_pin*]
 #
 # === Sample Usage:
 #   class { 'zabbix::repo':}
 #     or
 #   include zabbix::repo
 #
-class zabbix::repo (
-  $apt_pin = '510',
-) {
+class zabbix::repo ($apt_pin = '510',) {
   case $operatingsystem {
     centos  : { include zabbix::repo::centos }
     redhat  : { include zabbix::repo::redhat }
