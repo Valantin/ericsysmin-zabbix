@@ -12,7 +12,9 @@
 #     or
 #   include zabbix::repo
 #
-class zabbix::repo {
+class zabbix::repo (
+  $apt_pin = '510',
+) {
   case $operatingsystem {
     centos  : { include zabbix::repo::centos }
     redhat  : { include zabbix::repo::redhat }
@@ -45,6 +47,7 @@ class zabbix::repo::ubuntu {
     repos      => 'main',
     key        => '79EA5ED4',
     key_source => 'http://repo.zabbix.com/zabbix-official-repo.key',
+    pin        => $::zabbix::repo::apt_pin,
   }
 }
 
@@ -55,5 +58,6 @@ class zabbix::repo::debian {
     repos      => 'main',
     key        => '79EA5ED4',
     key_source => 'http://repo.zabbix.com/zabbix-official-repo.key',
+    pin        => $::zabbix::repo::apt_pin,
   }
 }
