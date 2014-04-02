@@ -6,12 +6,17 @@
 # Used to force apt to use the zabbix official repository vs other repositories.
 #
 # [version]
-# Can be used to specify the version of zabbix you wish to install the repository for. Defaults to 2.2.
+# Can be used to specify the version of zabbix you wish to install the
+# repository for. Defaults to 2.2.
 #
 # === Sample Usage:
 #   class { 'zabbix::repo':}
 #     or
 #   include zabbix::repo
+#
+# === Copyright
+#
+# Copyright 2014 Eric Anderson
 #
 class zabbix::repo ($apt_pin = '510', $version = '2.2') {
   case $operatingsystem {

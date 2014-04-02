@@ -2,140 +2,176 @@
 # This sets up the Zabbix Server on systems.
 #
 # === Parameters:
-#   [dbType]
+#   [*dbType*]
+#     The database type that the Zabbix Server connects to.
 #
-#   [nodeID]
-#   Unique NodeID in distributed setup.
-#     0 - standalone server
+#   [*nodeID*]
+#     Unique NodeID in distributed setup.
+#       0 - standalone server
 #
-#   [listenPort]
-#   Listen port for trapper.
+#   [*listenPort*]
+#     Listen port for trapper.
 #
-#   [sourceIP]
-#   Source IP address for outgoing connections.
+#   [*sourceIP*]
+#     Source IP address for outgoing connections.
 #
-#   [logFile]
-#   Name of log file.
-#     If not set, syslog is used.
+#   [*logFile*]
+#     Name of log file.
+#       If not set, syslog is used.
 #
-#   [logFileSize]
-#   Maximum size of log file in MB.
-#     0 - disable automatic log rotation.
+#   [*logFileSize*]
+#     Maximum size of log file in MB.
+#       0 - disable automatic log rotation.
 #
-#   [debugLevel]
+#   [*debugLevel*]
+#     Specifies debug level
+#       0 - no debug
+#       1 - critical information
+#       2 - error information
+#       3 - warnings
+#       4 - for debugging (produces lots of information)
 #
+#   [*pidFile*]
+#     Name of PID file.
 #
-#   [pidFile]
+#   [*dbHost*]
+#     Database host name.
+#       If set to localhost, socket is used for MySQL.
+#       If set to empty string, socket is used for PostgreSQL.
 #
-#   [dbHost]
+#   [*dbName*]
+#     Database name.
+#       For SQLite3 path to database file must be provided. DBUser and
+#       DBPassword are ignored.
 #
-#   [dbName]
+#   [*dbSchema*]
+#     Schema name. Used for IBM DB2.
 #
-#   [dbSchema]
+#   [*dbUser*]
+#     Database user. Ignored for SQLite.
 #
-#   [dbUser]
+#   [*dbPassword*]
+#     Database password. Ignored for SQLite.
 #
-#   [dbPassword]
+#   [*dbSocket*]
+#     Path to MySQL socket.
 #
-#   [dbSocket]
+#   [*dbPort*]
+#     Database port when not using local socket. Ignored for SQLite.
 #
-#   [dbPort]
+#   [*startPollers*]
+#     Number of pre-forked instances of pollers.
 #
-#   [startPollers]
+#   [*startIPMIPollers*]
+#     Number of pre-forked instances of IPMI pollers.
 #
-#   [startIPMIPollers]
+#   [*startPollersUnreachable*]
+#     Number of pre-forked instances of pollers for unreachable hosts (including
+#     IPMI).
 #
-#   [startPollersUnreachable]
+#   [*startTrappers*]
+#     Number of pre-forked instances of trappers.
+#       Trappers accept incoming connections from Zabbix sender, active agents,
+#       active proxies and child nodes.
+#       At least one trapper process must be running to display server
+#       availability in the frontend.
 #
-#   [startTrappers]
+#   [*startPingers*]
+#     Number of pre-forked instances of ICMP pingers.
 #
-#   [startPingers]
+#   [*startDiscoverers*]
+#     Number of pre-forked instances of discoverers.
 #
-#   [startDiscoverers]
+#   [*startHTTPPollers*]
+#     Number of pre-forked instances of HTTP pollers.
 #
-#   [startHTTPPollers]
+#   [*startTimers*]
+#     Number of pre-forked instances of timers.
+#       Timers process time-based trigger functions and maintenance periods.
+#       Only the first timer process handles the maintenance periods.
 #
-#   [startTimers]
+#   [*javaGateway*]
+#     IP address (or hostname) of Zabbix Java gateway.
+#       Only required if Java pollers are started.
 #
-#   [javaGateway]
+#   [*javaGatewayPort*]
+#     Port that Zabbix Java gateway listens on.
 #
-#   [javaGatewayPort]
+#   [*startJavaPollers*]
 #
-#   [startJavaPollers]
+#   [*startVMwareCollectors*]
 #
-#   [startVMwareCollectors]
+#   [*vmwareFrequency*]
 #
-#   [vmwareFrequency]
+#   [*vmwareCacheSize*]
 #
-#   [vmwareCacheSize]
+#   [*snmpTrapperFile*]
 #
-#   [snmpTrapperFile]
+#   [*startSNMPTrapper*]
 #
-#   [startSNMPTrapper]
+#   [*listenIP*]
 #
-#   [listenIP]
+#   [*housekeepingFrequency*]
 #
-#   [housekeepingFrequency]
+#   [*maxHousekeeperDelete*]
 #
-#   [maxHousekeeperDelete]
+#   [*senderFrequency*]
 #
-#   [senderFrequency]
+#   [*cacheSize*]
 #
-#   [cacheSize]
+#   [*cacheUpdateFrequency*]
 #
-#   [cacheUpdateFrequency]
+#   [*startDBSyncers*]
 #
-#   [startDBSyncers]
+#   [*historyCacheSize*]
 #
-#   [historyCacheSize]
+#   [*trendCacheSize*]
 #
-#   [trendCacheSize]
+#   [*historyTextCacheSize*]
 #
-#   [historyTextCacheSize]
+#   [*valueCacheSize*]
 #
-#   [valueCacheSize]
+#   [*nodeNoEvents*]
 #
-#   [nodeNoEvents]
+#   [*nodeNoHistory*]
 #
-#   [nodeNoHistory]
+#   [*timeout*]
 #
-#   [timeout]
+#   [*trapperTimeout*]
 #
-#   [trapperTimeout]
+#   [*unreachablePeriod*]
 #
-#   [unreachablePeriod]
+#   [*unavailableDelay*]
 #
-#   [unavailableDelay]
+#   [*unreachableDelay*]
 #
-#   [unreachableDelay]
+#   [*alertScriptsPath*]
 #
-#   [alertScriptsPath]
+#   [*externalScripts*]
 #
-#   [externalScripts]
+#   [*fpingLocation*]
 #
-#   [fpingLocation]
+#   [*fping6Location*]
 #
-#   [fping6Location]
+#   [*sshKeyLocation*]
 #
-#   [sshKeyLocation]
+#   [*logSlowQueries*]
 #
-#   [logSlowQueries]
+#   [*tmpDir*]
 #
-#   [tmpDir]
+#   [*startProxyPollers*]
 #
-#   [startProxyPollers]
+#   [*proxyConfigFrequency*]
 #
-#   [proxyConfigFrequency]
+#   [*proxyDataFrequency*]
 #
-#   [proxyDataFrequency]
+#   [*allowRoot*]
 #
-#   [allowRoot]
+#   [*include*]
 #
-#   [include]
+#   [*loadModulePath*]
 #
-#   [loadModulePath]
-#
-#   [loadModule]
+#   [*loadModule*]
 #
 # === Sample Usage:
 # 	class { 'zabbix::server':
@@ -211,7 +247,8 @@ class zabbix::server (
   $allowRoot               = $zabbix::server::params::allowRoot,
   $include                 = $zabbix::server::params::include,
   $loadModulePath          = $zabbix::server::params::loadModulePath,
-  $loadModule              = $zabbix::server::params::loadModule,) inherits zabbix::server::params {
+  $loadModule              = $zabbix::server::params::loadModule,) inherits 
+zabbix::server::params {
   include zabbix::server::install
   include zabbix::server::config
   include zabbix::server::service

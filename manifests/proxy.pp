@@ -5,7 +5,183 @@
 # === Parameters
 #   [*dbType*]
 #
+#
 #   [*proxyMode*]
+#
+#
+#   [*server*]
+#
+#
+#   [*serverPort*]
+#
+#
+#   [*hostname*]
+#
+#
+#   [*hostnameItem*]
+#
+#
+#   [*listenPort*]
+#
+#
+#   [*sourceIP*]
+#
+#
+#   [*logFile*]
+#
+#
+#   [*logFileSize*]
+#
+#
+#   [*debugLevel*]
+#
+#
+#   [*dBHost*]
+#
+#
+#   [*dBName*]
+#
+#
+#   [*dBSchema*]
+#
+#
+#   [*dBUser*]
+#
+#
+#   [*dBPassword*]
+#
+#
+#   [*dBSocket*]
+#
+#
+#   [*dBPort*]
+#
+#
+#   [*proxyLocalBuffer*]
+#
+#
+#   [*proxyOfflineBuffer*]
+#
+#
+#   [*heartbeatFrequency*]
+#
+#
+#   [*configFrequency*]
+#
+#
+#   [*dataSenderFrequency*]
+#
+#
+#   [*startPollers*]
+#
+#
+#   [*startIPMIPollers*]
+#
+#
+#   [*startPollersUnreachable*]
+#
+#
+#   [*startTrappers*]
+#
+#
+#   [*startPingers*]
+#
+#
+#   [*startDiscoverers*]
+#
+#
+#   [*startHTTPPollers*]
+#
+#
+#   [*startDiscoverers*]
+#
+#
+#   [*javaGateway*]
+#
+#
+#   [*javaGatewayPort*]
+#
+#
+#   [*javaGateway*]
+#
+#
+#   [*startJavaPollers*]
+#
+#
+#   [*startVMwareCollectors*]
+#
+#
+#   [*vMwareFrequency*]
+#
+#
+#   [*vMwareCacheSize*]
+#
+#
+#   [*sNMPTrapperFile*]
+#
+#
+#   [*listenIP*]
+#
+#
+#   [*housekeepingFrequency*]
+#
+#
+#   [*cacheSize*]
+#
+#
+#   [*startDBSyncers*]
+#
+#
+#   [*historyCacheSize*]
+#
+#
+#   [*historyTextCacheSize*]
+#
+#
+#   [*timeout*]
+#
+#
+#   [*trapperTimeout*]
+#
+#
+#   [*unreachablePeriod*]
+#
+#
+#   [*unavailableDelay*]
+#
+#
+#   [*unreachableDelay*]
+#
+#
+#   [*externalScripts*]
+#
+#
+#   [*fpingLocation*]
+#
+#
+#   [*fping6Location*]
+#
+#
+#   [*sSHKeyLocation*]
+#
+#
+#   [*logSlowQueries*]
+#
+#
+#   [*tmpDir*]
+#
+#
+#   [*allowRoot*]
+#
+#
+#   [*include*]
+#
+#
+#   [*loadModulePath*]
+#
+#
+#   [*loadModule*]
+#
 #
 # === Copyright
 #
