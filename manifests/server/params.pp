@@ -1,8 +1,134 @@
-# Class: zabbix::server::params
+# == Class: zabbix::server::params
 #
 # This class manages Zabbix server parameters
 #
-# Parameters:
+# === Parameters:
+#
+#   [dbType]
+#
+# 	[nodeID]
+#
+# 	[listenPort]
+#
+# 	[sourceIP]
+#
+# 	[logFile]
+#
+# 	[logFileSize]
+#
+# 	[debugLevel]
+#
+# 	[pidFile]
+#
+# 	[dbHost]
+#
+# 	[dbName]
+#
+# 	[dbSchema]
+#
+# 	[dbUser]
+#
+# 	[dbPassword]
+#
+# 	[dbSocket]
+#
+# 	[dbPort]
+#
+# 	[startPollers]
+#
+# 	[startIPMIPollers]
+#
+# 	[startPollersUnreachable]
+#
+# 	[startTrappers]
+#
+# 	[startPingers]
+#
+# 	[startDiscoverers]
+#
+# 	[startHTTPPollers]
+#
+# 	[startTimers]
+#
+# 	[javaGateway]
+#
+# 	[javaGatewayPort]
+#
+# 	[startJavaPollers]
+#
+# 	[startVMwareCollectors]
+#
+# 	[vmwareFrequency]
+#
+# 	[vmwareCacheSize]
+#
+# 	[snmpTrapperFile]
+#
+# 	[startSNMPTrapper]
+#
+# 	[listenIP]
+#
+# 	[housekeepingFrequency]
+#
+# 	[maxHousekeeperDelete]
+#
+# 	[senderFrequency]
+#
+# 	[cacheSize]
+#
+# 	[cacheUpdateFrequency]
+#
+# 	[startDBSyncers]
+#
+# 	[historyCacheSize]
+#
+# 	[trendCacheSize]
+#
+# 	[historyTextCacheSize]
+#
+# 	[valueCacheSize]
+#
+# 	[nodeNoEvents]
+#
+# 	[nodeNoHistory]
+#
+# 	[timeout]
+#
+# 	[trapperTimeout]
+#
+# 	[unreachablePeriod]
+#
+# 	[unavailableDelay]
+#
+# 	[unreachableDelay]
+#
+# 	[alertScriptsPath]
+#
+# 	[externalScripts]
+#
+# 	[fpingLocation]
+#
+# 	[fping6Location]
+#
+# 	[sshKeyLocation]
+#
+# 	[logSlowQueries]
+#
+# 	[tmpDir]
+#
+# 	[startProxyPollers]
+#
+# 	[proxyConfigFrequency]
+#
+# 	[proxyDataFrequency]
+#
+# 	[allowRoot]
+#
+# 	[include]
+#
+# 	[loadModulePath]
+#
+# 	[loadModule]
 #
 # Actions:
 #
@@ -14,7 +140,6 @@
 # 	  dbName  => 'zabbix',
 # 	  dbUser  => 'zabbix'
 # 	}
-
 class zabbix::server::params (
   $dbType                  = undef,
   $nodeID                  = undef,

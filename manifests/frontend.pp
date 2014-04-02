@@ -44,16 +44,15 @@
 # === Sample Usage:
 #
 # class { 'zabbix::frontend':
-#  dbType        => '',
-#  dbServer      => '',
-#  dbPort        => '',
-#  dbDatabase    => '',
-#  dbUser        => '',
-#  dbPassword    => '',
-#  dbSchema      => '',
-#  zbxServer     => '',
-#  zbxServerPort => '',
-#  zbxServerName => ''
+#  dbType        => 'mysql',
+#  dbServer      => 'localhost',
+#  dbPort        => '3306',
+#  dbDatabase    => 'zabbix',
+#  dbUser        => 'zabbix',
+#  dbPassword    => 'zabbixPassword',
+#  zbxServer     => 'localhost',
+#  zbxServerPort => '10051',
+#  zbxServerName => 'zabbix'
 #}
 #
 class zabbix::frontend (

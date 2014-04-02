@@ -2,203 +2,150 @@
 # This sets up the Zabbix Server on systems.
 #
 # === Parameters:
-#   [*dbType*]
+#   [dbType]
 #
-#   [*nodeID*]
+#   [nodeID]
+#   Unique NodeID in distributed setup.
+#     0 - standalone server
 #
-#   [*listenPort*]
+#   [listenPort]
+#   Listen port for trapper.
 #
-#   [*sourceIP*]
+#   [sourceIP]
+#   Source IP address for outgoing connections.
 #
-#   [*logFile*]
+#   [logFile]
+#   Name of log file.
+#     If not set, syslog is used.
 #
-#   [*logFileSize*]
+#   [logFileSize]
+#   Maximum size of log file in MB.
+#     0 - disable automatic log rotation.
 #
-#   [*debugLevel*]
+#   [debugLevel]
 #
-#   [*pidFile*]
 #
-#   [*dbHost*]
+#   [pidFile]
 #
-#   [*dbName*]
+#   [dbHost]
 #
-#   [*dbSchema*]
+#   [dbName]
 #
-#   [*dbUser*]
+#   [dbSchema]
 #
-#   [*dbPassword*]
+#   [dbUser]
 #
-#   [*dbSocket*]
+#   [dbPassword]
 #
-#   [*dbPort*]
+#   [dbSocket]
 #
-#   [*startPollers*]
+#   [dbPort]
 #
-#   [*startIPMIPollers*]
+#   [startPollers]
 #
-#   [*startPollersUnreachable*]
+#   [startIPMIPollers]
 #
-#   [*startTrappers*]
+#   [startPollersUnreachable]
 #
-#   [*startPingers*]
+#   [startTrappers]
 #
-#   [*startDiscoverers*]
+#   [startPingers]
 #
-#   [*startHTTPPollers*]
+#   [startDiscoverers]
 #
-#   [*startTimers*]
+#   [startHTTPPollers]
 #
-#   [*javaGateway*]
+#   [startTimers]
 #
-#   [*javaGatewayPort*]
+#   [javaGateway]
 #
-#   [*startJavaPollers*]
+#   [javaGatewayPort]
 #
-#   [*startVMwareCollectors*]
+#   [startJavaPollers]
 #
-#   [*vmwareFrequency*]
+#   [startVMwareCollectors]
 #
-#   [*vmwareCacheSize*]
+#   [vmwareFrequency]
 #
-#   [*snmpTrapperFile*]
+#   [vmwareCacheSize]
 #
-#   [*startSNMPTrapper*]
+#   [snmpTrapperFile]
 #
-#   [*listenIP*]
+#   [startSNMPTrapper]
 #
-#   [*housekeepingFrequency*]
+#   [listenIP]
 #
-#   [*maxHousekeeperDelete*]
+#   [housekeepingFrequency]
 #
-#   [*senderFrequency*]
+#   [maxHousekeeperDelete]
 #
-#   [*cacheSize*]
+#   [senderFrequency]
 #
-#   [*cacheUpdateFrequency*]
+#   [cacheSize]
 #
-#   [*startDBSyncers*]
+#   [cacheUpdateFrequency]
 #
-#   [*historyCacheSize*]
+#   [startDBSyncers]
 #
-#   [*trendCacheSize*]
+#   [historyCacheSize]
 #
-#   [*historyTextCacheSize
+#   [trendCacheSize]
 #
-#   [*valueCacheSize*]
+#   [historyTextCacheSize]
 #
-#   [*nodeNoEvents*]
+#   [valueCacheSize]
 #
-#   [*nodeNoHistory*]
+#   [nodeNoEvents]
 #
-#   [*timeout*]
+#   [nodeNoHistory]
 #
-#   [*trapperTimeout*]
+#   [timeout]
 #
-#   [*unreachablePeriod*]
+#   [trapperTimeout]
 #
-#   [*unavailableDelay*]
+#   [unreachablePeriod]
 #
-#   [*unreachableDelay*]
+#   [unavailableDelay]
 #
-#   [*alertScriptsPath*]
+#   [unreachableDelay]
 #
-#   [*externalScripts*]
+#   [alertScriptsPath]
 #
-#   [*fpingLocation*]
+#   [externalScripts]
 #
-#   [*fping6Location*]
+#   [fpingLocation]
 #
-#   [*sshKeyLocation*]
+#   [fping6Location]
 #
-#   [*logSlowQueries*]
+#   [sshKeyLocation]
 #
-#   [*tmpDir*]
+#   [logSlowQueries]
 #
-#   [*startProxyPollers*]
+#   [tmpDir]
 #
-#   [*proxyConfigFrequency*]
+#   [startProxyPollers]
 #
-#   [*proxyDataFrequency*]
+#   [proxyConfigFrequency]
 #
-#   [*allowRoot*]
+#   [proxyDataFrequency]
 #
-#   [*include*]
+#   [allowRoot]
 #
-#   [*loadModulePath*]
+#   [include]
 #
-#   [*loadModule*]
+#   [loadModulePath]
 #
-# Actions:
-#   This sets up the Zabbix Agent on systems.
+#   [loadModule]
 #
-# Requires:
-#   [*server*] must be set
-#
-# Sample Usage:
+# === Sample Usage:
 # 	class { 'zabbix::server':
 # 	  dbType                  => 'mysql',
-# 	  nodeID                  => undef,
-# 	  listenPort              => undef,
-# 	  sourceIP                => undef,
-# 	  logFile                 => undef,
-# 	  logFileSize             => undef,
-# 	  debugLevel              => undef,
-# 	  pidFile                 => undef,
-# 	  dbHost                  => undef,
-# 	  dbName                  => undef,
-# 	  dbSchema                => undef,
-# 	  dbUser                  => undef,
-# 	  dbPassword              => undef,
-# 	  dbSocket                => undef,
-# 	  dbPort                  => undef,
-# 	  startPollers            => undef,
-# 	  startIPMIPollers        => undef,
-# 	  startPollersUnreachable => undef,
-# 	  startTrappers           => undef,
-# 	  startPingers            => undef,
-# 	  startDiscoverers        => undef,
-# 	  startHTTPPollers        => undef,
-# 	  startTimers             => undef,
-# 	  javaGateway             => undef,
-# 	  javaGatewayPort         => undef,
-# 	  startJavaPollers        => undef,
-# 	  startVMwareCollectors   => undef,
-# 	  vmwareFrequency         => undef,
-# 	  vmwareCacheSize         => undef,
-# 	  snmpTrapperFile         => undef,
-# 	  startSNMPTrapper        => undef,
-# 	  listenIP                => undef,
-# 	  housekeepingFrequency   => undef,
-# 	  maxHousekeeperDelete    => undef,
-# 	  senderFrequency         => undef,
-# 	  cacheSize               => undef,
-# 	  cacheUpdateFrequency    => undef,
-# 	  startDBSyncers          => undef,
-# 	  historyCacheSize        => undef,
-# 	  trendCacheSize          => undef,
-# 	  historyTextCacheSize    => undef,
-# 	  valueCacheSize          => undef,
-# 	  nodeNoEvents            => undef,
-# 	  nodeNoHistory           => undef,
-# 	  timeout                 => undef,
-# 	  trapperTimeout          => undef,
-# 	  unreachablePeriod       => undef,
-# 	  unavailableDelay        => undef,
-# 	  unreachableDelay        => undef,
-# 	  alertScriptsPath        => undef,
-# 	  externalScripts         => undef,
-# 	  fpingLocation           => undef,
-# 	  fping6Location          => undef,
-# 	  sshKeyLocation          => undef,
-# 	  logSlowQueries          => undef,
-# 	  tmpDir                  => undef,
-# 	  startProxyPollers       => undef,
-# 	  proxyConfigFrequency    => undef,
-# 	  proxyDataFrequency      => undef,
-# 	  allowRoot               => undef,
-# 	  include                 => undef,
-# 	  loadModulePath          => undef,
-# 	  loadModule              => undef,
+# 	  dbHost                  => 'localhost',
+# 	  dbName                  => 'zabbix',
+# 	  dbUser                  => 'zabbix',
+# 	  dbPassword              => 'zabbixPassword',
+# 	  dbPort                  => '3306',
+# 	  allowRoot               => '1',
 # 	}
 #
 class zabbix::server (
