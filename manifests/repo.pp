@@ -14,9 +14,9 @@
 #     or
 #   include zabbix::repo
 #
-# === Copyright
+# === Authors
 #
-# Copyright 2014 Eric Anderson
+# Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::repo ($apt_pin = '510', $version = '2.2') {
   case $operatingsystem {

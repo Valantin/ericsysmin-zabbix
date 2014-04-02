@@ -183,9 +183,9 @@
 #   [*loadModule*]
 #
 #
-# === Copyright
+# === Authors
 #
-# Copyright 2014 Eric Anderson
+# Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::proxy (
   $dbType                  = $zabbix::proxy::params::dbType,
