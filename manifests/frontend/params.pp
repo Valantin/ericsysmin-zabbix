@@ -32,6 +32,10 @@
 #
 #   [*zbxServerName*]
 #
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
+#
 class zabbix::frontend::params (
   $dbType        = 'MYSQL',
   $dbServer      = 'localhost',

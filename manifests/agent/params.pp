@@ -40,18 +40,22 @@
 #     List of comma delimited IP addresses (or hostnames) of Zabbix servers.
 #       Incoming connections will be accepted only from the hosts listed here.
 #       No spaces allowed.
-#       If IPv6 support is enabled then '127.0.0.1', '::127.0.0.1', '::ffff:127.0.0.1' are treated equally.
+#       If IPv6 support is enabled then '127.0.0.1', '::127.0.0.1',
+#       '::ffff:127.0.0.1' are treated equally.
 #
 #   [*listenPort*]
 #     Agent will listen on this port for connections from the server.
 #
 #   [*listenIP*]
 #     List of comma delimited IP addresses that the agent should listen on.
-#     First IP address is sent to Zabbix server if connecting to it to retrieve list of active checks.
+#     First IP address is sent to Zabbix server if connecting to it to retrieve
+#     list of active checks.
 #
 #   [*startAgents*]
-#     Number of pre-forked instances of zabbix_agentd that process passive checks.
-#     If set to 0, disables passive checks and the agent will not listen on any TCP port.
+#     Number of pre-forked instances of zabbix_agentd that process passive
+#     checks.
+#     If set to 0, disables passive checks and the agent will not listen on any
+#     TCP port.
 #
 #   [*serverActive*]
 #     List of comma delimited IP:port (or hostname:port) pairs of Zabbix servers
@@ -78,7 +82,8 @@
 #   [*hostMetadata*]
 #     Optional parameter that defines host metadata.
 #       Host metadata is used at host auto-registration process.
-#       An agent will issue an error and not start if the value is over limit of 255 characters.
+#       An agent will issue an error and not start if the value is over limit of
+#       255 characters.
 #       If not defined, value will be acquired from HostMetadataItem.
 #
 #   [*hostMetadataItem*]
@@ -95,29 +100,36 @@
 #     Do not keep data longer than N seconds in buffer.
 #
 #   [*bufferSize*]
-#     Maximum number of values in a memory buffer. The agent will send all collected data to Zabbix Server or Proxy if the buffer is full.
+#     Maximum number of values in a memory buffer. The agent will send all
+#     collected data to Zabbix Server or Proxy if the buffer is full.
 #
 #   [*maxLinesPerSecond*]
-#     Maximum number of new lines the agent will send per second to Zabbix Server
+#     Maximum number of new lines the agent will send per second to Zabbix
+#     Server
 #       or Proxy processing 'log' and 'logrt' active checks.
 #       The provided value will be overridden by the parameter 'maxlines',
 #       provided in 'log' or 'logrt' item keys.
 #
 #   [*allowRoot*]
-#     Allow the agent to run as 'root'. If disabled and the agent is started by 'root', the agent
-#       will try to switch to user 'zabbix' instead. Has no effect if started under a regular user.
+#     Allow the agent to run as 'root'. If disabled and the agent is started by
+#     'root', the agent
+#       will try to switch to user 'zabbix' instead. Has no effect if started
+#       under a regular user.
 #       0 - do not allow
 #       1 - allow
 #
 #   [*zabbix_alias*]
-#     Sets an alias for parameter. It can be useful to substitute long and complex parameter name with a smaller and simpler one.
+#     Sets an alias for parameter. It can be useful to substitute long and
+#     complex parameter name with a smaller and simpler one.
 #
 #   [*timeout*]
 #     Spend no more than Timeout seconds on processing
 #
 #   [*include*]
-#     You may include individual files or all files in a directory in the configuration file.
-#       Installing Zabbix will create include directory in /usr/local/etc, unless modified during the compile time.
+#     You may include individual files or all files in a directory in the
+#     configuration file.
+#       Installing Zabbix will create include directory in /usr/local/etc,
+#       unless modified during the compile time.
 #
 #   [*unsafeUserParameters*]
 #     Allow all characters to be passed in arguments to user-defined parameters.
@@ -125,10 +137,15 @@
 #       1 - allow
 #
 #   [*userParameter*]
-#     User-defined parameter to monitor. There can be several user-defined parameters.
+#     User-defined parameter to monitor. There can be several user-defined
+#     parameters.
 #       Format: UserParameter=<key>,<shell command>
 #       Note that shell command must not return empty string or EOL only.
 #       See 'zabbix_agentd' directory for examples.
+#
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::params (
   $ensure               = present,

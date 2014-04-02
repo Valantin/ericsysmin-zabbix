@@ -6,6 +6,10 @@
 #     or
 #   include zabbix::proxy::install
 #
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
+#
 class zabbix::proxy::install {
   include zabbix::repo
 

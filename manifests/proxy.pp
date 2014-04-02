@@ -2,8 +2,14 @@
 #
 # This sets up the Zabbix Proxy parameters.
 #
-# === Parameters:
-#   [dbType]
+# === Parameters
+#   [*dbType*]
+#
+#   [*proxyMode*]
+#
+# === Copyright
+#
+# Copyright 2014 Eric Anderson
 #
 class zabbix::proxy (
   $dbType                  = $zabbix::proxy::params::dbType,

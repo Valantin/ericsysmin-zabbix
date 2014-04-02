@@ -2,9 +2,13 @@
 # This class installs the zabbix agent package
 #
 # === Sample Usage:
-#   class { 'zabbix::agent::install':}
-#     or
-#   include zabbix::agent::install
+# class { 'zabbix::agent::install':}
+# or
+# include zabbix::agent::install
+#
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::install {
   include zabbix::repo

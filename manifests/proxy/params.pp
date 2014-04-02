@@ -5,6 +5,10 @@
 # === Parameters:
 #   [dbType]
 #
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
+#
 class zabbix::proxy::params (
   $dbType                  = undef,
   $proxyMode               = undef,

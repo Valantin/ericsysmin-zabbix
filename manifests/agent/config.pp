@@ -1,8 +1,10 @@
 # == Class: zabbix::agent::config
-# This class configures the zabbix agent configuration by combining the template and the configuration values from zabbix::agent::params.
+# This class configures the zabbix agent configuration by combining the template
+# and the configuration values from zabbix::agent::params.
 #
-# === Sample Usage:
-# class {'zabbix::agent::config': } or include zabbix::agent::config
+# === Authors
+#
+# Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::config {
   file { '/etc/zabbix/zabbix_agentd.conf':
