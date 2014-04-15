@@ -14,7 +14,7 @@ class zabbix::agent::install {
   include zabbix::repo
 
   package { 'zabbix-agent':
-    ensure  => present,
+    ensure  => $zabbix::agent::params::package_ensure,
     require => Class['zabbix::repo'],
   }
 }

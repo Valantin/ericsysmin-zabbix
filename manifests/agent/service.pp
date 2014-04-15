@@ -8,7 +8,7 @@
 #
 class zabbix::agent::service {
   service { 'zabbix-agent':
-    ensure     => running,
+    ensure     => $zabbix::agent::params::service_ensure,
     hasstatus  => true,
     hasrestart => true,
     require    => Package['zabbix-agent'],

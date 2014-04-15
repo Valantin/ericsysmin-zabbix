@@ -148,7 +148,8 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::params (
-  $ensure               = present,
+  $package_ensure       = present,
+  $service_ensure       = running,
   $pidFile              = '/var/run/zabbix/zabbix_agentd.pid',
   $logFile              = '/var/log/zabbix/zabbix_agentd.log',
   $logFileSize          = undef,
