@@ -1,0 +1,2 @@
+ericsysmin-zabbix
+=================
