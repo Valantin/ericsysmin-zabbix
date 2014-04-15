@@ -21,7 +21,7 @@
             "name": "puppetlabs/apt",
             "version_requirement": ">= 1.4.2"
         }
-    ]
+    ],
   "dependencies": {"name":"puppetlabs-apt","version_requirement":">= 1.4.2"},
   "source": "https://github.com/ericsysmin/ericsysmin-zabbix",
   "project_page": "https://github.com/ericsysmin/ericsysmin-zabbix",
