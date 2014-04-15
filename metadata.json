@@ -6,6 +6,7 @@
         "10.04",
         "12.04"
       ]
+    }
   ],
   "requirements": [
     {
@@ -17,7 +18,7 @@
       "version_requirement": "3.x"
     }
   ],
-  "name": "ericsysmin/zabbix",
+  "name": "ericsysmin-zabbix",
   "version": "0.5.1",
   "summary": "Zabbix Monitoring Management",
   "source": "https://github.com/ericsysmin/ericsysmin-zabbix",
