@@ -115,4 +115,8 @@ class { 'zabbix::server':
   loadModulePath          => undef,
   loadModule              => undef,
 }
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
