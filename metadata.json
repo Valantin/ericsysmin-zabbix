@@ -1,23 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "ericsysmin-zabbix",
-  "version": "0.1.2",
-  "summary": "",
-  "author": "Eric Anderson",
-  "description": "This module provides the ability to maintain the Zabbix, agent and server on your systems managed by Puppet.",
-  "dependencies": [
-    {
-       "name":"puppetlabs/apt",
-       "version_requirement":">= 1.0.0"
-    }
-  ],
-  "types": [],
-  "checksums": {},
-  "source": "https://github.com/ericsysmin/puppet-zabbix",
-  "project_page": "https://github.com/ericsysmin/puppet-zabbix",
-  "license": ""
-}
-=======
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
@@ -51,4 +32,3 @@
     }
   ]
 }
->>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
