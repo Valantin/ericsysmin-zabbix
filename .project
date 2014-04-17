@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>zabbix</name>
-=======
 	<name>ericsysmin-zabbix</name>
->>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-<<<<<<< HEAD
-			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
-=======
 			<name>com.puppetlabs.geppetto.pp.dsl.ui.modulefileBuilder</name>
->>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-<<<<<<< HEAD
-			<name>org.cloudsmith.geppetto.pp.dsl.ui.modulefileBuilder</name>
-=======
 			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
->>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
-<<<<<<< HEAD
-		<nature>org.cloudsmith.geppetto.pp.dsl.ui.puppetNature</nature>
-=======
 		<nature>com.puppetlabs.geppetto.pp.dsl.ui.puppetNature</nature>
->>>>>>> 94b8434565eb5f0c27398c2b48a0d008ce5075f1
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 	</natures>
 </projectDescription>
