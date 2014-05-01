@@ -65,8 +65,14 @@ class zabbix::frontend (
   $dbSchema      = $zabbix::frontend::params::dbSchema,
   $zbxServer     = $zabbix::frontend::params::zbxServer,
   $zbxServerPort = $zabbix::frontend::params::zbxServerPort,
-  $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits zabbix::frontend::params {
+  $zbxServerName = $zabbix::frontend::params::zbxServerName) {
+  include zabbix::frontend::params
+  include zabbix::repo
   include zabbix::frontend::install
   include zabbix::frontend::config
 
+  Class['zabbix::frontend::params'] ->
+  Class['zabbix::repo'] ->
+  Class['zabbix::frontend::install'] ->
+  Class['zabbix::frontend::config']
 }

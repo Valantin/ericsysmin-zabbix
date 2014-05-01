@@ -247,9 +247,17 @@ class zabbix::server (
   $allowRoot               = $zabbix::server::params::allowRoot,
   $include                 = $zabbix::server::params::include,
   $loadModulePath          = $zabbix::server::params::loadModulePath,
-  $loadModule              = $zabbix::server::params::loadModule,) inherits 
-zabbix::server::params {
+  $loadModule              = $zabbix::server::params::loadModule) {
+  include zabbix::repo
+  include zabbix::server::params
   include zabbix::server::install
   include zabbix::server::config
   include zabbix::server::service
+
+  Class['zabbix::servers::params'] ->
+  Class['zabbix::repo'] ->
+  Class['zabbix::server::install'] ->
+  Class['zabbix::server::config'] ~>
+  Class['zabbix::server::service']
+
 }

@@ -11,7 +11,6 @@
 #
 class zabbix::frontend::config {
   file { '/etc/zabbix/web/zabbix.conf.php':
-    require => Class['zabbix::frontend::install'],
     replace => true,
     mode    => 0640,
     owner   => 'root',

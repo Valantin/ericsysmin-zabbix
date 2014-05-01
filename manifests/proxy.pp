@@ -246,4 +246,15 @@ class zabbix::proxy (
   $include                 = $zabbix::proxy::params::include,
   $loadModulePath          = $zabbix::proxy::params::loadModulePath,
   $loadModule              = $zabbix::proxy::params::loadModule) {
+  include zabbix::proxy::params
+  include zabbix::repo
+  include zabbix::proxy::install
+  include zabbix::proxy::service
+  include zabbix::proxy::config
+
+  Class['zabbix::proxy::params'] ->
+  Class['zabbix::repo'] ->
+  Class['zabbix::proxy::install'] ->
+  Class['zabbix::proxy::config'] ~>
+  Class['zabbix::proxy::service']
 }
