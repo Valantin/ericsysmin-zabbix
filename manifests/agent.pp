@@ -179,14 +179,15 @@ class zabbix::agent (
   $timeout              = $zabbix::agent::params::timeout,
   $include              = $zabbix::agent::params::include,
   $unsafeUserParameters = $zabbix::agent::params::unsafeUserParameters,
-  $userParameter        = $zabbix::agent::params::userParameter) {
-  include zabbix::agent::params
+  $userParameter        = $zabbix::agent::params::userParameter) inherits zabbix::agent::params {
+  include apt
   include zabbix::repo
   include zabbix::agent::install
   include zabbix::agent::service
   include zabbix::agent::config
 
   Class['zabbix::agent::params'] ->
+  Class['apt'] ->
   Class['zabbix::repo'] ->
   Class['zabbix::agent::install'] ->
   Class['zabbix::agent::config'] ~>

@@ -29,7 +29,9 @@
 # Mandatory: no
 # Default:
 # SourceIP=
-<% if @sourceIP %>SourceIP=<%= @sourceIP %><% end %>
+<% if @sourceIP %>
+SourceIP=<%= @sourceIP %>
+<% end %>
 
 ### Option: LogFile
 #  Name of log file.
@@ -38,7 +40,9 @@
 # Mandatory: no
 # Default:
 # LogFile=
-<% if @logFile %>LogFile=<%= @logFile %><% end %>
+<% if @logFile %>
+LogFile=<%= @logFile %>
+<% end %>
 
 ### Option: LogFileSize
 #  Maximum size of log file in MB.
@@ -48,7 +52,9 @@
 # Range: 0-1024
 # Default:
 # LogFileSize=1
-<% if @logFileSize %>LogFileSize=<%= @logFileSize %><% end %>
+<% if @logFileSize %>
+LogFileSize=<%= @logFileSize %>
+<% end %>
 
 ### Option: DebugLevel
 #  Specifies debug level
@@ -62,7 +68,9 @@
 # Range: 0-4
 # Default:
 # DebugLevel=3
-<% if @debugLevel %>DebugLevel=<%= @debugLevel %><% end %>
+<% if @debugLevel %>
+DebugLevel=<%= @debugLevel %>
+<% end %>
 
 ### Option: PidFile
 #  Name of PID file.
@@ -70,7 +78,9 @@
 # Mandatory: no
 # Default:
 # PidFile=/tmp/zabbix_server.pid
-<% if @pidFile %>PidFile=<%= @pidFile %><% end %>
+<% if @pidFile %>
+PidFile=<%= @pidFile %>
+<% end %>
 
 ### Option: DBHost
 #  Database host name.
@@ -80,7 +90,9 @@
 # Mandatory: no
 # Default:
 # DBHost=localhost
-<% if @dbHost %>DBHost=<%= @dbHost %><% end %>
+<% if @dbHost %>
+DBHost=<%= @dbHost %>
+<% end %>
 
 ### Option: DBName
 #  Database name.
@@ -89,7 +101,9 @@
 # Mandatory: yes
 # Default:
 # DBName=
-<% if @dbName %>DBName=<%= @dbName %><% end %>
+<% if @dbName %>
+DBName=<%= @dbName %>
+<% end %>
 
 ### Option: DBSchema
 #  Schema name. Used for IBM DB2.
@@ -97,7 +111,9 @@
 # Mandatory: no
 # Default:
 # DBSchema=
-<% if @dbSchema %>DBSchema=<%= @dbSchema %><% end %>
+<% if @dbSchema %>
+DBSchema=<%= @dbSchema %>
+<% end %>
 
 ### Option: DBUser
 #  Database user. Ignored for SQLite.
@@ -105,7 +121,9 @@
 # Mandatory: no
 # Default:
 # DBUser=
-<% if @dbUser %>DBUser=<%= @dbUser %><% end %>
+<% if @dbUser %>
+DBUser=<%= @dbUser %>
+<% end %>
 
 ### Option: DBPassword
 #  Database password. Ignored for SQLite.
@@ -114,7 +132,9 @@
 # Mandatory: no
 # Default:
 # DBPassword=
-<% if @dbPassword %>DBPassword=<%= @dbPassword %><% end %>
+<% if @dbPassword %>
+DBPassword=<%= @dbPassword %>
+<% end %>
 
 ### Option: DBSocket
 #  Path to MySQL socket.
@@ -122,7 +142,9 @@
 # Mandatory: no
 # Default:
 # DBSocket=/tmp/mysql.sock
-<% if @dbSocket %>DBSocket=<%= @dbSocket %><% end %>
+<% if @dbSocket %>
+DBSocket=<%= @dbSocket %>
+<% end %>
 
 ### Option: DBPort
 #  Database port when not using local socket. Ignored for SQLite.
@@ -131,7 +153,9 @@
 # Range: 1024-65535
 # Default (for MySQL):
 # DBPort=3306
-<% if @dbPort %>DBPort=<%= @dbPort %><% end %>
+<% if @dbPort %>
+DBPort=<%= @dbPort %>
+<% end %>
 
 ############ ADVANCED PARAMETERS ################
 
@@ -142,7 +166,9 @@
 # Range: 0-1000
 # Default:
 # StartPollers=5
-<% if @startPollers %>StartPollers=<%= @startPollers %><% end %>
+<% if @startPollers %>
+StartPollers=<%= @startPollers %>
+<% end %>
 
 ### Option: StartIPMIPollers
 #  Number of pre-forked instances of IPMI pollers.
@@ -563,7 +589,9 @@
 # Mandatory: no
 # Default:
 # AllowRoot=0
-<% if @allowRoot %>AllowRoot=<%= @allowRoot %><% end %>
+<% if @allowRoot %>
+AllowRoot=<%= @allowRoot %>
+<% end %>
 
 ### Option: Include
 #  You may include individual files or all files in a directory in the configuration file.
@@ -572,7 +600,9 @@
 # Mandatory: no
 # Default:
 # Include=
-<% if @include %>Include=<%= @include %><% end %>
+<% if @include %>
+Include=<%= @include %>
+<% end %>
 
 # Include=/usr/local/etc/zabbix_server.general.conf
 # Include=/usr/local/etc/zabbix_server.conf.d/
