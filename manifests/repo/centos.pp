@@ -1,15 +1,6 @@
 # == Class: zabbix::repo::centos
 # This sets up the Official Zabbix Repository on CentOS systems.
 #
-# === Variables
-#
-# [*zabbix::repo::version*]
-#   This is inherited from zabbix::repo which gets sent to this class when
-#   called.
-#
-# === Sample Usage:
-#   include zabbix::repo::centos
-#
 # === Authors
 #
 # Eric Anderson <eric.sysmin@gmail.com>

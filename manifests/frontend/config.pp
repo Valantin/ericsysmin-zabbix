@@ -2,9 +2,6 @@
 # This class configures the zabbix frontend configuration by combining the
 # template and the configuration values from zabbix::frontend::params.
 #
-# === Sample Usage:
-# class {'zabbix::frontend::config': } or include zabbix::frontend::config
-#
 # === Authors
 #
 # Eric Anderson <eric.sysmin@gmail.com>

@@ -2,9 +2,6 @@
 #
 # This sets up the Zabbix Proxy parameters.
 #
-# === Parameters:
-#   [dbType]
-#
 # === Authors
 #
 # Eric Anderson <eric.sysmin@gmail.com>
