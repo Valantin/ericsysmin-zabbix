@@ -7,9 +7,5 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::service {
-  service { 'zabbix-agent':
-    ensure     => $zabbix::agent::params::service_ensure,
-    hasstatus  => true,
-    hasrestart => true
-  }
+  service { 'zabbix-agent': ensure => $zabbix::agent::params::service_ensure }
 }

@@ -12,7 +12,7 @@ class zabbix::frontend::params (
   $dbPort        = '3306',
   $dbDatabase    = 'zabbix',
   $dbUser        = 'zabbix',
-  $dbPassword,
+  $dbPassword    = 'zabbix',
   $dbSchema      = undef,
   $zbxServer     = 'localhost',
   $zbxServerPort = '10051',

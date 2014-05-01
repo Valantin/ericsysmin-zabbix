@@ -1,9 +1,10 @@
-version '0.5.1'
-source 'https://github.com/ericsysmin/puppet-zabbix'
+name 'ericsysmin-zabbix'
+version '0.5.2'
+source 'https://github.com/ericsysmin/ericsysmin-zabbix'
 author 'Eric Anderson'
-license ''
-summary 'This module provides the ability to maintain the Zabbix, agent and server on your systems managed by Puppet.'
-description ''
+license 'Apache Version 2.0'
+summary 'Zabbix Monitoring Management'
+description 'Zabbix Module for managing Agent, Server, Proxy and Frontend on Ubuntu.'
 project_page 'https://github.com/ericsysmin/ericsysmin-zabbix'
 
 ## Add dependencies, if any:
