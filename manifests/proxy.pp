@@ -246,16 +246,8 @@ class zabbix::proxy (
   $include                 = $zabbix::proxy::params::include,
   $loadModulePath          = $zabbix::proxy::params::loadModulePath,
   $loadModule              = $zabbix::proxy::params::loadModule) inherits zabbix::proxy::params {
-  include apt
-  include zabbix::repo
-  include zabbix::proxy::install
-  include zabbix::proxy::service
-  include zabbix::proxy::config
-
-  Class['zabbix::proxy::params'] ->
-  Class['apt'] ->
-  Class['zabbix::repo'] ->
-  Class['zabbix::proxy::install'] ->
-  Class['zabbix::proxy::config'] ~>
-  Class['zabbix::proxy::service']
+  class { 'zabbix::repo': } ->
+  class { 'zabbix::proxy::install': } ->
+  class { 'zabbix::proxy::config': } ~>
+  class { 'zabbix::proxy::service': }
 }

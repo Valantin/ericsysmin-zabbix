@@ -6,6 +6,7 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::repo::debian {
+  class { 'apt': } ->
   apt::source { 'zabbix':
     location   => "http://repo.zabbix.com/zabbix/${::zabbix::repo::version}/debian/",
     release    => 'wheezy',

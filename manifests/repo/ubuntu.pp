@@ -6,6 +6,7 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::repo::ubuntu {
+  class { 'apt': } ->
   apt::source { 'zabbix':
     location   => "http://repo.zabbix.com/zabbix/${::zabbix::repo::version}/ubuntu/",
     release    => 'precise',
