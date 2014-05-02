@@ -327,7 +327,7 @@ class zabbix::server (
   include zabbix::server::config
   include zabbix::server::service
 
-  Class['zabbix::servers::params'] ->
+  Class['zabbix::server::params'] ->
   Class['apt'] ->
   Class['zabbix::repo'] ->
   Class['zabbix::server::install'] ->
