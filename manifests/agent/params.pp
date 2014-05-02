@@ -16,7 +16,7 @@ class zabbix::agent::params (
   $sourceIP             = undef,
   $enableRemoteCommands = undef,
   $logRemoteCommands    = undef,
-  $server               = '127.0.0.1',
+  $server               = 'zabbix',
   $listenPort           = undef,
   $listenIP             = undef,
   $startAgents          = undef,

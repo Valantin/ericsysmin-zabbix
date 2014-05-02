@@ -1,0 +1,1 @@
+class { 'zabbix::agent': server => 'zabbix.example.com', }

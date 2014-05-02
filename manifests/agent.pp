@@ -4,13 +4,16 @@
 #
 # === Parameters:
 #
-#   [pidFile]
-#   Name of PID file.
+# [*pidFile*]
+# Name of PID file.
+# Mandatory: no
+# Default:
+# PidFile=/tmp/zabbix_agentd.pid
 #
-#   [logFile]
-#   Name of log file. If not set, syslog is used.
+# [logFile]
+# Name of log file. If not set, syslog is used.
 #
-#   [logFileSize]
+# [logFileSize]
 #   Maximum size of log file in MB.
 #     0 - disable automatic log rotation.
 #

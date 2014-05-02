@@ -12,6 +12,9 @@
 # Mandatory: no
 # Default:
 # ProxyMode=0
+<% if @proxyMode %>
+ProxyMode=<%= @proxyMode %>
+<% end %>
 
 ### Option: Server
 #	IP address (or hostname) of Zabbix server.
@@ -21,8 +24,9 @@
 # Mandatory: yes (if ProxyMode is set to 0)
 # Default:
 # Server=
-
-Server=127.0.0.1
+<% if @server %>
+Server=<%= @server %>
+<% end %>
 
 ### Option: ServerPort
 #	Port of Zabbix trapper on Zabbix server.
@@ -32,6 +36,9 @@ Server=127.0.0.1
 # Range: 1024-32767
 # Default:
 # ServerPort=10051
+<% if @serverPort %>
+ServerPort=<%= @serverPort %>
+<% end %>
 
 ### Option: Hostname
 #	Unique, case sensitive Proxy name. Make sure the Proxy name is known to the server!
@@ -40,8 +47,9 @@ Server=127.0.0.1
 # Mandatory: no
 # Default:
 # Hostname=
-
-Hostname=Zabbix proxy
+<% if @hostname %>
+Hostname=<%= @hostname %>
+<% end %>
 
 ### Option: HostnameItem
 #	Item used for generating Hostname if it is undefined.
@@ -50,6 +58,9 @@ Hostname=Zabbix proxy
 # Mandatory: no
 # Default:
 # HostnameItem=system.hostname
+<% if @hostnameItem %>
+HostnameItem=<%= @hostnameItem %>
+<% end %>
 
 ### Option: ListenPort
 #	Listen port for trapper.
@@ -58,6 +69,9 @@ Hostname=Zabbix proxy
 # Range: 1024-32767
 # Default:
 # ListenPort=10051
+<% if @listenPort %>
+ListenPort=<%= @listenPort %>
+<% end %>
 
 ### Option: SourceIP
 #	Source IP address for outgoing connections.
@@ -65,6 +79,9 @@ Hostname=Zabbix proxy
 # Mandatory: no
 # Default:
 # SourceIP=
+<% if @sourceIP %>
+SourceIP=<%= @sourceIP %>
+<% end %>
 
 ### Option: LogFile
 #	Name of log file.
@@ -73,8 +90,10 @@ Hostname=Zabbix proxy
 # Mandatory: no
 # Default:
 # LogFile=
-
-LogFile=/tmp/zabbix_proxy.log
+# LogFile=/tmp/zabbix_proxy.log
+<% if @logFile %>
+LogFile=<%= @logFile %>
+<% end %>
 
 ### Option: LogFileSize
 #	Maximum size of log file in MB.
@@ -84,6 +103,9 @@ LogFile=/tmp/zabbix_proxy.log
 # Range: 0-1024
 # Default:
 # LogFileSize=1
+<% if @logFileSize %>
+LogFileSize=<%= @logFileSize %>
+<% end %>
 
 ### Option: DebugLevel
 #	Specifies debug level
@@ -97,6 +119,9 @@ LogFile=/tmp/zabbix_proxy.log
 # Range: 0-4
 # Default:
 # DebugLevel=3
+<% if @debugLevel %>
+DebugLevel=<%= @debugLevel %>
+<% end %>
 
 ### Option: PidFile
 #	Name of PID file.
@@ -104,6 +129,9 @@ LogFile=/tmp/zabbix_proxy.log
 # Mandatory: no
 # Default:
 # PidFile=/tmp/zabbix_proxy.pid
+<% if @pidFile %>
+PidFile=<%= @pidFile %>
+<% end %>
 
 ### Option: DBHost
 #	Database host name.
@@ -113,6 +141,9 @@ LogFile=/tmp/zabbix_proxy.log
 # Mandatory: no
 # Default:
 # DBHost=localhost
+<% if @dbHost %>
+DBHost=<%= @dbHost %>
+<% end %>
 
 ### Option: DBName
 #	Database name.
@@ -122,8 +153,7 @@ LogFile=/tmp/zabbix_proxy.log
 # Mandatory: yes
 # Default:
 # DBName=
-
-DBName=zabbix_proxy
+DBName=<%= @dbName %>
 
 ### Option: DBSchema
 #	Schema name. Used for IBM DB2.
@@ -131,14 +161,18 @@ DBName=zabbix_proxy
 # Mandatory: no
 # Default:
 # DBSchema=
+<% if @dbSchema %>
+DBSchema=<%= @dbSchema %>
+<% end %>
 
 ### Option: DBUser
 #	Database user. Ignored for SQLite.
 #
 # Default:
 # DBUser=
-
-DBUser=root
+<% if @dbUser %>
+DBUser=<%= @dbUser %>
+<% end %>
 
 ### Option: DBPassword
 #	Database password. Ignored for SQLite.
@@ -146,7 +180,9 @@ DBUser=root
 #
 # Mandatory: no
 # Default:
-# DBPassword=
+<% if @dbPassword %>
+DBPassword=<%= @dbPassword %>
+<% end %>
 
 ### Option: DBSocket
 #	Path to MySQL socket.
@@ -154,6 +190,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # DBSocket=/tmp/mysql.sock
+<% if @dbSocket %>
+DBSocket=<%= @dbSocket %>
+<% end %>
 
 # Option: DBPort
 #	Database port when not using local socket. Ignored for SQLite.
@@ -161,6 +200,9 @@ DBUser=root
 # Mandatory: no
 # Default (for MySQL):
 # DBPort=3306
+<% if @dbPort %>
+DBPort=<%= @dbPort %>
+<% end %>
 
 ######### PROXY SPECIFIC PARAMETERS #############
 
@@ -172,6 +214,9 @@ DBUser=root
 # Range: 0-720
 # Default:
 # ProxyLocalBuffer=0
+<% if @proxyLocalBuffer %>
+ProxyLocalBuffer=<%= @proxyLocalBuffer %>
+<% end %>
 
 ### Option: ProxyOfflineBuffer
 #	Proxy will keep data for N hours in case if no connectivity with Zabbix Server.
@@ -181,6 +226,9 @@ DBUser=root
 # Range: 1-720
 # Default:
 # ProxyOfflineBuffer=1
+<% if @proxyOfflineBuffer %>
+ProxyOfflineBuffer=<%= @proxyOfflineBuffer %>
+<% end %>
 
 ### Option: HeartbeatFrequency
 #	Frequency of heartbeat messages in seconds.
@@ -192,6 +240,9 @@ DBUser=root
 # Range: 0-3600
 # Default:
 # HeartbeatFrequency=60
+<% if @heartbeatFrequency %>
+HeartbeatFrequency=<%= @heartbeatFrequency %>
+<% end %>
 
 ### Option: ConfigFrequency
 #	How often proxy retrieves configuration data from Zabbix Server in seconds.
@@ -201,6 +252,9 @@ DBUser=root
 # Range: 1-3600*24*7
 # Default:
 # ConfigFrequency=3600
+<% if @configFrequency %>
+ConfigFrequency=<%= @configFrequency %>
+<% end %>
 
 ### Option: DataSenderFrequency
 #	Proxy will send collected data to the Server every N seconds.
@@ -210,6 +264,9 @@ DBUser=root
 # Range: 1-3600
 # Default:
 # DataSenderFrequency=1
+<% if @dataSenderFrequency %>
+DataSenderFrequency=<%= @dataSenderFrequency %>
+<% end %>
 
 ############ ADVANCED PARAMETERS ################
 
@@ -220,6 +277,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartPollers=5
+<% if @startPollers %>
+StartPollers=<%= @startPollers %>
+<% end %>
 
 ### Option: StartIPMIPollers
 #	Number of pre-forked instances of IPMI pollers.
@@ -228,6 +288,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartIPMIPollers=0
+<% if @startIPMIPollers %>
+StartIPMIPollers=<%= @startIPMIPollers %>
+<% end %>
 
 ### Option: StartPollersUnreachable
 #	Number of pre-forked instances of pollers for unreachable hosts (including IPMI).
@@ -236,6 +299,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartPollersUnreachable=1
+<% if @startPollersUnreachable %>
+StartPollersUnreachable=<%= @startPollersUnreachable %>
+<% end %>
 
 ### Option: StartTrappers
 #	Number of pre-forked instances of trappers.
@@ -245,6 +311,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartTrappers=5
+<% if @startTrappers %>
+StartTrappers=<%= @startTrappers %>
+<% end %>
 
 ### Option: StartPingers
 #	Number of pre-forked instances of ICMP pingers.
@@ -253,6 +322,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartPingers=1
+<% if @startPingers %>
+StartPingers=<%= @startPingers %>
+<% end %>
 
 ### Option: StartDiscoverers
 #	Number of pre-forked instances of discoverers.
@@ -261,6 +333,9 @@ DBUser=root
 # Range: 0-250
 # Default:
 # StartDiscoverers=1
+<% if @StartDiscoverers %>
+StartDiscoverers=<%= @StartDiscoverers %>
+<% end %>
 
 ### Option: StartHTTPPollers
 #	Number of pre-forked instances of HTTP pollers.
@@ -269,6 +344,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartHTTPPollers=1
+<% if @startHTTPPollers %>
+StartHTTPPollers=<%= @startHTTPPollers %>
+<% end %>
 
 ### Option: JavaGateway
 #	IP address (or hostname) of Zabbix Java gateway.
@@ -277,6 +355,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # JavaGateway=
+<% if @javaGateway %>
+JavaGateway=<%= @javaGateway %>
+<% end %>
 
 ### Option: JavaGatewayPort
 #	Port that Zabbix Java gateway listens on.
@@ -285,6 +366,9 @@ DBUser=root
 # Range: 1024-32767
 # Default:
 # JavaGatewayPort=10052
+<% if @javaGatewayPort %>
+JavaGatewayPort=<%= @javaGatewayPort %>
+<% end %>
 
 ### Option: StartJavaPollers
 #	Number of pre-forked instances of Java pollers.
@@ -293,6 +377,9 @@ DBUser=root
 # Range: 0-1000
 # Default:
 # StartJavaPollers=0
+<% if @startJavaPollers %>
+StartJavaPollers=<%= @startJavaPollers %>
+<% end %>
 
 ### Option: StartVMwareCollectors
 #	Number of pre-forked vmware collector instances.
@@ -301,6 +388,9 @@ DBUser=root
 # Range: 0-250
 # Default:
 # StartVMwareCollectors=0
+<% if @startVMwareCollectors %>
+StartVMwareCollectors=<%= @startVMwareCollectors %>
+<% end %>
 
 ### Option: VMwareFrequency
 #	How often Zabbix will connect to VMware service to obtain a new data.
@@ -309,6 +399,9 @@ DBUser=root
 # Range: 10-86400
 # Default:
 # VMwareFrequency=60
+<% if @vmwareFrequency %>
+VMwareFrequency=<%= @vmwareFrequency %>
+<% end %>
 
 ### Option: VMwareCacheSize
 #	Size of VMware cache, in bytes.
@@ -319,6 +412,9 @@ DBUser=root
 # Range: 256K-2G
 # Default:
 # VMwareCacheSize=8M
+<% if @vmwareCacheSize %>
+VMwareCacheSize=<%= @vmwareCacheSize %>
+<% end %>
 
 ### Option: SNMPTrapperFile
 #	Temporary file used for passing data from SNMP trap daemon to the proxy.
@@ -327,6 +423,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # SNMPTrapperFile=/tmp/zabbix_traps.tmp
+<% if @snmpTrapperFile %>
+SNMPTrapperFile=<%= @snmpTrapperFile %>
+<% end %>
 
 ### Option: StartSNMPTrapper
 #	If 1, SNMP trapper process is started.
@@ -335,6 +434,9 @@ DBUser=root
 # Range: 0-1
 # Default:
 # StartSNMPTrapper=0
+<% if @startSNMPTrapper %>
+StartSNMPTrapper=<%= @startSNMPTrapper %>
+<% end %>
 
 ### Option: ListenIP
 #	List of comma delimited IP addresses that the trapper should listen on.
@@ -343,6 +445,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # ListenIP=0.0.0.0
+<% if @listenIP %>
+ListenIP=<%= @listenIP %>
+<% end %>
 
 ### Option: HousekeepingFrequency
 #	How often Zabbix will perform housekeeping procedure (in hours).
@@ -352,6 +457,9 @@ DBUser=root
 # Range: 1-24
 # Default:
 # HousekeepingFrequency=1
+<% if @housekeepingFrequency %>
+HousekeepingFrequency=<%= @housekeepingFrequency %>
+<% end %>
 
 ### Option: CacheSize
 #	Size of configuration cache, in bytes.
@@ -361,6 +469,9 @@ DBUser=root
 # Range: 128K-2G
 # Default:
 # CacheSize=8M
+<% if @cacheSize %>
+CacheSize=<%= @cacheSize %>
+<% end %>
 
 ### Option: StartDBSyncers
 #	Number of pre-forked instances of DB Syncers
@@ -369,6 +480,9 @@ DBUser=root
 # Range: 1-100
 # Default:
 # StartDBSyncers=4
+<% if @startDBSyncers %>
+StartDBSyncers=<%= @startDBSyncers %>
+<% end %>
 
 ### Option: HistoryCacheSize
 #	Size of history cache, in bytes.
@@ -378,6 +492,9 @@ DBUser=root
 # Range: 128K-2G
 # Default:
 # HistoryCacheSize=8M
+<% if @historyCacheSize %>
+HistoryCacheSize=<%= @historyCacheSize %>
+<% end %>
 
 ### Option: HistoryTextCacheSize
 #	Size of text history cache, in bytes.
@@ -387,6 +504,9 @@ DBUser=root
 # Range: 128K-2G
 # Default:
 # HistoryTextCacheSize=16M
+<% if @historyTextCacheSize %>
+HistoryTextCacheSize=<%= @historyTextCacheSize %>
+<% end %>
 
 ### Option: Timeout
 #	Specifies how long we wait for agent, SNMP device or external check (in seconds).
@@ -395,6 +515,9 @@ DBUser=root
 # Range: 1-30
 # Default:
 # Timeout=3
+<% if @timeout %>
+Timeout=<%= @timeout %>
+<% end %>
 
 ### Option: TrapperTimeout
 #	Specifies how many seconds trapper may spend processing new data.
@@ -403,6 +526,9 @@ DBUser=root
 # Range: 1-300
 # Default:
 # TrapperTimeout=300
+<% if @trapperTimeout %>
+TrapperTimeout=<%= @trapperTimeout %>
+<% end %>
 
 ### Option: UnreachablePeriod
 #	After how many seconds of unreachability treat a host as unavailable.
@@ -411,6 +537,9 @@ DBUser=root
 # Range: 1-3600
 # Default:
 # UnreachablePeriod=45
+<% if @unreachablePeriod %>
+UnreachablePeriod=<%= @unreachablePeriod %>
+<% end %>
 
 ### Option: UnavailableDelay
 #	How often host is checked for availability during the unavailability period, in seconds.
@@ -419,6 +548,9 @@ DBUser=root
 # Range: 1-3600
 # Default:
 # UnavailableDelay=60
+<% if @unavailableDelay %>
+UnavailableDelay=<%= @unavailableDelay %>
+<% end %>
 
 ### Option: UnreachableDelay
 #	How often host is checked for availability during the unreachability period, in seconds.
@@ -427,6 +559,9 @@ DBUser=root
 # Range: 1-3600
 # Default:
 # UnreachableDelay=15
+<% if @unreachableDelay %>
+UnreachableDelay=<%= @unreachableDelay %>
+<% end %>
 
 ### Option: ExternalScripts
 #	Full path to location of external scripts.
@@ -435,6 +570,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # ExternalScripts=${datadir}/zabbix/externalscripts
+<% if @externalScripts %>
+ExternalScripts=<%= @externalScripts %>
+<% end %>
 
 ### Option: FpingLocation
 #	Location of fping.
@@ -443,6 +581,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # FpingLocation=/usr/sbin/fping
+<% if @fpingLocation %>
+FpingLocation=<%= @fpingLocation %>
+<% end %>
 
 ### Option: Fping6Location
 #	Location of fping6.
@@ -452,6 +593,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # Fping6Location=/usr/sbin/fping6
+<% if @fping6Location %>
+Fping6Location=<%= @fping6Location %>
+<% end %>
 
 ### Option: SSHKeyLocation
 #	Location of public and private keys for SSH checks and actions.
@@ -459,6 +603,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # SSHKeyLocation=
+<% if @sshKeyLocation %>
+SSHKeyLocation=<%= @sshKeyLocation %>
+<% end %>
 
 ### Option: LogSlowQueries
 #	How long a database query may take before being logged (in milliseconds).
@@ -469,6 +616,9 @@ DBUser=root
 # Range: 1-3600000
 # Default:
 # LogSlowQueries=0
+<% if @logSlowQueries %>
+LogSlowQueries=<%= @logSlowQueries %>
+<% end %>
 
 ### Option: TmpDir
 #	Temporary directory.
@@ -476,6 +626,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # TmpDir=/tmp
+<% if @tmpDir %>
+TmpDir=<%= @tmpDir %>
+<% end %>
 
 ### Option: AllowRoot
 #	Allow the proxy to run as 'root'. If disabled and the proxy is started by 'root', the proxy
@@ -486,6 +639,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # AllowRoot=0
+<% if @allowRoot %>
+AllowRoot=<%= @allowRoot %>
+<% end %>
 
 ### Option: Include
 #	You may include individual files or all files in a directory in the configuration file.
@@ -494,7 +650,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # Include=
-
+<% if @include %>
+Include=<%= @include %>
+<% end %>
 # Include=/usr/local/etc/zabbix_proxy.general.conf
 # Include=/usr/local/etc/zabbix_proxy.conf.d/
 
@@ -507,6 +665,9 @@ DBUser=root
 # Mandatory: no
 # Default:
 # LoadModulePath=${libdir}/modules
+<% if @loadModulePath %>
+LoadModulePath=<%= @loadModulePath %>
+<% end %>
 
 ### Option: LoadModule
 #	Module to load at proxy startup. Modules are used to extend functionality of the proxy.
@@ -517,3 +678,6 @@ DBUser=root
 # Mandatory: no
 # Default:
 # LoadModule=
+<% if @loadModule %>
+LoadModule=<%= @loadModule %>
+<% end %>

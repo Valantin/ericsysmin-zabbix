@@ -293,11 +293,13 @@ Timeout=<%= @timeout %>
 # Mandatory: no
 # Default:
 # Include=
-<% if @include -%>
-Include=<%= @include %>
-<% end -%>
 # Include=/etc/zabbix/zabbix_agentd.userparams.conf
 # Include=/etc/zabbix/zabbix_agentd.conf.d/
+<% if @include and ! @include.empty? -%>
+<% Array(@include).each do |includeFile| -%>
+Include=<%= includeFile %>
+<% end -%>
+<% end -%>
 
 ####### USER-DEFINED MONITORED PARAMETERS #######
 

@@ -8,7 +8,6 @@
 #
 class zabbix::agent::config {
   file { '/etc/zabbix/zabbix_agentd.conf':
-    notify  => Service['zabbix-agent'],
     replace => true,
     content => template('zabbix/agent/zabbix_agentd.conf.erb'),
   }

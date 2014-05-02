@@ -16,5 +16,5 @@ class zabbix::frontend::params (
   $dbSchema      = undef,
   $zbxServer     = 'localhost',
   $zbxServerPort = '10051',
-  $zbxServerName = '') {
+  $zbxServerName = undef) {
 }
