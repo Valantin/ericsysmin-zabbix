@@ -6,5 +6,10 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::agent::install {
-  package { 'zabbix-agent': ensure => $zabbix::agent::params::package_ensure }
+  include zabbix::repo
+
+  package { 'zabbix-agent':
+    ensure  => $zabbix::agent::params::package_ensure,
+    require => Class['zabbix::repo'],
+  }
 }

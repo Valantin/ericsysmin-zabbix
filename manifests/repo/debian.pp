@@ -6,7 +6,8 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::repo::debian {
-  class { 'apt': } ->
+  include apt
+
   apt::source { 'zabbix':
     location   => "http://repo.zabbix.com/zabbix/${::zabbix::repo::version}/debian/",
     release    => 'wheezy',
@@ -14,5 +15,6 @@ class zabbix::repo::debian {
     key        => '79EA5ED4',
     key_source => 'http://repo.zabbix.com/zabbix-official-repo.key',
     pin        => $::zabbix::repo::apt_pin,
+    require    => Class['apt'],
   }
 }

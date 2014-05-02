@@ -6,5 +6,10 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::proxy::install {
-  package { "zabbix-proxy-${zabbix::proxy::params::dbType}": ensure => present }
+  include zabbix::repo
+
+  package { "zabbix-proxy-${zabbix::proxy::params::dbType}":
+    ensure  => present,
+    require => Class['zabbix::repo'],
+  }
 }

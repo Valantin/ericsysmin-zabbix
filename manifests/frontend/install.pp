@@ -6,5 +6,10 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::frontend::install {
-  package { 'zabbix-frontend-php': ensure => present }
+  include zabbix::repo
+
+  package { 'zabbix-frontend-php':
+    ensure  => present,
+    require => Class['zabbix::repo'],
+  }
 }
