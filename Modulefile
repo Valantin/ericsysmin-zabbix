@@ -1,5 +1,5 @@
 name 'ericsysmin-zabbix'
-version '0.5.2'
+version '0.5.5'
 source 'https://github.com/ericsysmin/ericsysmin-zabbix'
 author 'Eric Anderson'
 license 'Apache Version 2.0'

@@ -10,7 +10,7 @@
     }
   ],
   "name": "ericsysmin-zabbix",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "summary": "Zabbix Monitoring Management",
   "author": "Eric Anderson",
   "description": "Zabbix Module for managing Agent, Server, Proxy and Frontend on Ubuntu.",
