@@ -66,14 +66,8 @@ class zabbix::frontend (
   $zbxServer     = $zabbix::frontend::params::zbxServer,
   $zbxServerPort = $zabbix::frontend::params::zbxServerPort,
   $zbxServerName = $zabbix::frontend::params::zbxServerName) inherits zabbix::frontend::params {
-  include apt
-  include zabbix::repo
-  include zabbix::frontend::install
-  include zabbix::frontend::config
-
-  Class['zabbix::frontend::params'] ->
-  Class['apt'] ->
-  Class['zabbix::repo'] ->
-  Class['zabbix::frontend::install'] ->
-  Class['zabbix::frontend::config']
+  class { 'apt': } ->
+  class { 'zabbix::repo': } ->
+  class { 'zabbix::frontend::install': } ->
+  class { 'zabbix::frontend::config': }
 }

@@ -183,16 +183,9 @@ class zabbix::agent (
   $include              = $zabbix::agent::params::include,
   $unsafeUserParameters = $zabbix::agent::params::unsafeUserParameters,
   $userParameter        = $zabbix::agent::params::userParameter) inherits zabbix::agent::params {
-  include apt
-  include zabbix::repo
-  include zabbix::agent::install
-  include zabbix::agent::service
-  include zabbix::agent::config
-
-  Class['zabbix::agent::params'] ->
-  Class['apt'] ->
-  Class['zabbix::repo'] ->
-  Class['zabbix::agent::install'] ->
-  Class['zabbix::agent::config'] ~>
-  Class['zabbix::agent::service']
+  class { 'apt': } ->
+  class { 'zabbix::repo': } ->
+  class { 'zabbix::agent::install': } ->
+  class { 'zabbix::agent::config': } ~>
+  class { 'zabbix::agent::service': }
 }

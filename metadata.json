@@ -23,7 +23,6 @@
   "source": "https://github.com/ericsysmin/ericsysmin-zabbix",
   "project_page": "http://github.com/ericsysmin/ericsysmin-zabbix",
   "license": "Apache Version 2.0",
-  "description": "Zabbix Module for managing Agent, Server, Proxy and Frontend on Ubuntu.",
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",

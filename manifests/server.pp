@@ -321,17 +321,9 @@ class zabbix::server (
   $include                 = $zabbix::server::params::include,
   $loadModulePath          = $zabbix::server::params::loadModulePath,
   $loadModule              = $zabbix::server::params::loadModule) inherits zabbix::server::params {
-  include apt
-  include zabbix::repo
-  include zabbix::server::install
-  include zabbix::server::config
-  include zabbix::server::service
-
-  Class['zabbix::server::params'] ->
-  Class['apt'] ->
-  Class['zabbix::repo'] ->
-  Class['zabbix::server::install'] ->
-  Class['zabbix::server::config'] ~>
-  Class['zabbix::server::service']
-
+  class { 'apt': } ->
+  class { 'zabbix::repo': } ->
+  class { 'zabbix::server::install': } ->
+  class { 'zabbix::server::config': } ~>
+  class { 'zabbix::server::service': }
 }
