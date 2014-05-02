@@ -15,6 +15,5 @@ class zabbix::repo::debian {
     key        => '79EA5ED4',
     key_source => 'http://repo.zabbix.com/zabbix-official-repo.key',
     pin        => $::zabbix::repo::apt_pin,
-    require    => Class['apt'],
   }
 }
