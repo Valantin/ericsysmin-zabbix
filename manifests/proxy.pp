@@ -7,13 +7,23 @@
 #
 #
 #   [*proxyMode*]
-#
+#     Proxy operating mode
+#     0 - proxy in the active mode
+#     1 - proxy in the passive mode
+#     Default:
+#     ProxyMode=0
 #
 #   [*server*]
-#
+#     IP address (or hostname) of Zabbix server.
+#     Active proxy will get configuration data from the server.
+#     For a proxy in the passive mode this parameter will be ignored.
+#     Mandatory: yes (if ProxyMode is set to 0)
 #
 #   [*serverPort*]
-#
+#     Port of Zabbix trapper on Zabbix server.
+#     For a proxy in the passive mode this parameter will be ignored.
+#     Mandatory: no
+#     Range: 1024-32767
 #
 #   [*hostname*]
 #
