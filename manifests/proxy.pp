@@ -3,9 +3,6 @@
 # This sets up the Zabbix Proxy parameters.
 #
 # === Parameters
-#   [*dbType*]
-#
-#
 #   [*proxyMode*]
 #     Proxy operating mode
 #     0 - proxy in the active mode
@@ -44,6 +41,9 @@
 #
 #
 #   [*debugLevel*]
+#
+#
+#   [*dbType*]
 #
 #
 #   [*dBHost*]
