@@ -19,11 +19,9 @@
 # Eric Anderson <eric.sysmin@gmail.com>
 #
 class zabbix::repo ($apt_pin = '510', $version = '2.2') {
-  case $operatingsystem {
-    centos  : { include zabbix::repo::centos }
-    redhat  : { include zabbix::repo::redhat }
-    debian  : { include zabbix::repo::debian }
-    ubuntu  : { include zabbix::repo::ubuntu }
+  case $osfamily {
+    RedHat  : { include zabbix::repo::redhat }
+    Debian  : { include zabbix::repo::debian }
     default : { fail('Unrecognized operating system for webserver') }
   }
 
