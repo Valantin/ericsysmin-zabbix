@@ -7,8 +7,9 @@
 #
 class zabbix::repo::redhat {
   yumrepo { 'zabbix':
-    baseurl  => "http://repo.zabbix.com/zabbix/${::zabbix::repo::version}/rhel/",
+    baseurl  => "http://repo.zabbix.com/zabbix/${::zabbix::repo::version}/rhel/${lsbmajdistrelease}/\$basearch",
     gpgcheck => '1',
-    gpgkey   => 'http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX'
+    gpgkey   => 'http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX',
+    enabled  => '1'
   }
 }
